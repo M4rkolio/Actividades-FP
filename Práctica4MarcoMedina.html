@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.3">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //=======================================ACTIVIDADES DE VIDEOS 34-35 jonmircha================================================================
+                
+  /*      
+    1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+    4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+    */
+
+   
+    // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    function contar_txt(verb = "")
+    {
+        console.log(`La palabra  ${verb} posee ${verb.length} caracteres`);
+    }
+    contar_txt("Hola mundo");
+    // 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    function cut_txt(palabra = "")
+    {
+        console.log(palabra.slice(0,6));
+    }
+    cut_txt("Hola mundo");
+    // 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+    function sepy(texto) 
+    {
+        console.log(texto.split(' '));
+    }
+    sepy("hola que tal");
+    // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    function rep_txt(info,veces)
+    {
+        console.log(info.repeat(veces));
+    }
+    rep_txt("Hola mundo",3);
+    //5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    function reverse(info)
+    {
+        return info.split("").reverse().join("");
+    }
+    console.log(reverse("Hola mundo"));
+    // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+    function cnt_vtxt(info, info2) 
+    {
+            let ctext = info.split(" ");
+            let counter = 0;
+            for (let i = 0; i < ctext.length; i++) {
+                if (ctext[i] == info2) 
+                {
+                    counter++;
+                }
+            }
+            console.log(`Se encontro la palabra ${info2} ${counter} veces`);
+    }    
+    cnt_vtxt("hola mundo adios mundo", "mundo");   
+    //7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    function revisar(texto) 
+    {
+        const reservada = texto.split("").reverse().join("");
+        if( reservada === texto)console.log(`La palabra  ${texto} es palíndromo`);
+        else 
+        console.log(`La palabra  ${texto} no es un palíndromo`);
+    }
+    revisar("Salas");
+    //8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+    function brok_lp(convertir, dato) 
+    {
+        let apartar = convertir.split(",");
+        let resultb = "";
+        for (let i = 0; i < apartar.length; i++) 
+        {
+            resultb += apartar[i].replace(dato, "");
+        }
+        console.log(resultb);
+    }
+    brok_lp("xyz1 , xyz2 , xyz3 , xyz4 ,y xyz5", "xyz");
+    </script>
+</body>
+</html>
