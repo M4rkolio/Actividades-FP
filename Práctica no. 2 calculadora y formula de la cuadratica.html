@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.3">
+    <title>Calculadora 2da Practica FP</title>
+    <body>
+    <center><h2><p style="color:#600472ef";>CALCULADORA ARITMÉTICA<br> 
+    <form action="">
+        <table border="4.7" align="center">
+            <tr>
+                <td>
+                    Ingresa el primer numero o valor:
+                    <input type = "number" name = "num1" id = "num1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingresa el segundo numero o valor:
+                    <input type = "number" name = "num2" id = "num2">
+                </td>
+                
+            </td>
+            <tr>
+                
+                <td>
+                    <center>OPERACIÓN A REALIZAR: </center>
+                    <center>¿QUÉ TIPO DE OPERACIÓN DESEAS HACER?</center>
+                    <br>
+                    1.SUMAR
+                    <br>
+                    2.RESTAR
+                    <br>
+                    3.MULTIPLICAR
+                    <br>
+                    4.DIVIDIR
+                    <input type = "number" name = "num3" id = "num3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular ahora" onclick =Calcular();>
+                </td>
+            </tr>
+        </table>
+    </form>
+   
+    <script>
+        
+    
+        function calculo(nbr1,tv,nbr2) 
+        {
+            let resil = null;
+            switch(tv)
+            {
+                case 1: return resil = nbr1+nbr2;
+                case 2:return  resil = nbr1-nbr2;
+                case 3:return   resil = nbr1*nbr2;
+                case 4:return  resil = nbr1/nbr2;
+            }
+        }
+        function Calcular()
+        {
+            let a = parseInt(document.getElementById("num1").value);
+            let b = parseInt(document.getElementById("num2").value);
+            let c = parseInt(document.getElementById("num3").value);
+            let m =  calculo(a,c,b);
+            return  alert("el resultado del valor: "+m);
+
+        
+        }
+      
+
+  
+      
+        
+       
+
+
+    </script>
+    <center><h4><p style="color:#006effef";>FÓRMULA DE LA CUADRÁTICA<br> 
+    <form action="">
+        <table border="1.1" align="center">
+            <tr>
+                <td>
+                    INGRESA EL PRIMER VALOR a:
+                    <input type = "number" name = "vle1" id = "vle1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    INGRESA EL SEGUNDO VALOR b:
+                    <input type = "number" name = "vle2" id = "vle2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    INGRESA EL TERCER VALOR c:
+                    <input type = "number" name = "vle3" id = "vle3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular" onclick ="Cuadratica_Cal();">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //
+    function Cuadratica_Cal() 
+    {
+        let a = parseInt(document.getElementById("vle1").value);
+        let b = parseInt(document.getElementById("vle2").value);
+        let c = parseInt(document.getElementById("vle3").value);
+        let parte1 = (-1)*b;
+        let parte2 = Math.pow(b,2)-(4*a*c);
+        let parte3 = 2*a;
+        if (parte2 > 0) {
+            let x1 = (parte1 - Math.sqrt(parte2))/parte3;
+            let x2 = (parte1 + Math.sqrt(parte2))/parte3;
+            alert("Estos son los valores de x: "+ parseFloat(x1) + " y " +parseFloat(x2));
+        } else {
+            let x3 = parte1/parte3;
+            alert("El valor de x es: "+ parseFloat(x3));
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html> 
